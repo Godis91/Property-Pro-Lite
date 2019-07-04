@@ -1,0 +1,30 @@
+{
+  "name": "property-pro-lite",
+  "version": "1.0.0",
+  "description": "An app for advertising and also buying properties",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godis91/Property-Pro-Lite.git"
+  },
+  "keywords": [
+    "Property"
+  ],
+  "author": "Godisgreat Agu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Godis91/Property-Pro-Lite/issues"
+  },
+  "homepage": "https://github.com/Godis91/Property-Pro-Lite#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/register": "^7.4.4",
+    "eslint": "^6.0.1"
+  }
+}
