@@ -22,7 +22,7 @@ export default class PropertyController {
     } catch (err) {
       return res.status(500).json({
         status: 'error',
-        error: 'Internal server error '
+        error: 'Internal server error Unable to post new property'
       });
     }
   }
