@@ -29,43 +29,43 @@ export default class UserController {
     }
   }
 
-  // static async signinUser(req, res) {
-  //   try {
-  //     const { email, password } = req.body;
-  //     const user = await getUser(email);
+  static async signinUser(req, res) {
+    try {
+      const { email, password } = req.body;
+      const user = await getUser(email);
 
-  //     if (!user) {
-  //       return res
-  //         .status(401)
-  //         .send({ status: 'error', error: 'Invalid username or password' });
-  //     }
+      if (!user) {
+        return res
+          .status(401)
+          .send({ status: 'error', error: 'Invalid username or password' });
+      }
 
-  //     if (passwordHash.verify(password.trim(), user.password)) {
-  //       const { id, is_admin } = user;
+      if (passwordHash.verify(password.trim(), user.password)) {
+        const { id, is_admin } = user;
 
-  //       const token = await generateToken({ id, is_admin });
+        const token = await generateToken({ id, is_admin });
 
-  //       const { first_name, last_name } = user;
-  //       const userDetails = {
-  //         id,
-  //         first_name,
-  //         last_name,
-  //         email,
-  //       };
-  //       const data = Object.assign({ token }, userDetails);
+        const { first_name, last_name } = user;
+        const userDetails = {
+          id,
+          first_name,
+          last_name,
+          email
+        };
+        const data = Object.assign({ token }, userDetails);
 
-  //       return res.status(200).json({
-  //         status: 'success',
-  //         data,
-  //       });
-  //     }
-  //     return res
-  //       .status(401)
-  //       .send({ status: 'error', error: 'Invalid username or password' });
-  //   } catch (err) {
-  //     return res
-  //       .status(500)
-  //       .send({ status: 'error', error: 'Internal server error' });
-  //   }
-  // }
+        return res.status(200).json({
+          status: 'success',
+          data
+        });
+      }
+      return res
+        .status(401)
+        .send({ status: 'error', error: 'Invalid username or password' });
+    } catch (err) {
+      return res
+        .status(500)
+        .send({ status: 'error', error: 'Internal server error' });
+    }
+  }
 }
