@@ -27,22 +27,22 @@ export default class PropertyController {
     }
   }
 
-  // static updateProperty(req, res) {
-  //   let property;
+  static updateProperty(req, res) {
+    let property;
 
-  //   try {
-  //     property = update(req, res);
-  //     return res.status(200).json({
-  //       status: 'success',
-  //       data: property
-  //     });
-  //   } catch (err) {
-  //     return res.status(500).json({
-  //       status: 'error',
-  //       error: 'Internal server error Unable to modify property'
-  //     });
-  //   }
-  // }
+    try {
+      property = update(req, res);
+      return res.status(200).json({
+        status: 'success',
+        data: property
+      });
+    } catch (err) {
+      return res.status(500).json({
+        status: 'error',
+        error: 'Internal server error Unable to modify property'
+      });
+    }
+  }
 
   // static markAsSold(req, res) {
   //   let property;
